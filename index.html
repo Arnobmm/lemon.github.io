@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Links</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#121212">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Link Directory</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search by number or keyword..." inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+                <button id="clearBtn" class="clear-btn">clear</button>
+                <button id="optionsBtn" class="options-btn" style="margin-left: 8px;">options</button>
+            </div>
+        </header>
+        
+        <div id="notification" class="notification"></div>
+        
+        <div class="content-wrapper">
+            <div class="buttons-container">
+                <div id="optionsMenu" class="options-menu">
+                <div class="primary-buttons">
+                    <button id="addMoreBtn" class="add-more-btn">add more</button>
+                    <button id="themeBtn" class="theme-btn">change theme</button>
+                    <button id="showDeleteBtn" class="delete-mode-btn">delete</button>
+                    <button id="editModeBtn" class="edit-mode-btn">edit</button>
+                </div>
+                
+                <div class="import-export-container">
+                    <button id="exportBtn" class="export-btn">export</button>
+                    <button id="importBtn" class="import-btn">import</button>
+                    <button id="exportFileBtn" class="export-file-btn">export to file</button>
+                    <button id="importFileBtn" class="import-file-btn">import from file</button>
+                </div>
+                
+                <div id="addEntryForm" class="add-entry-form">
+                    <h3>Add New Entry</h3>
+                    <input type="text" id="newNumber" placeholder="Number (required)" required>
+                    <input type="text" id="newUrl" placeholder="Link URL (required)" required>
+                    <input type="text" id="newSpecial" placeholder="Special text (optional)">
+                    <button id="saveEntryBtn">Save</button>
+                    <button id="cancelEntryBtn">Cancel</button>
+                </div>
+                
+                <div id="importForm" class="import-form">
+                    <h3>Import Links</h3>
+                    <textarea id="importData" placeholder="Paste exported data here..."></textarea>
+                    <button id="confirmImportBtn">Import</button>
+                    <button id="cancelImportBtn">Cancel</button>
+                </div>
+                
+                <div id="themeSelector" class="theme-selector">
+                    <h3>Select Theme</h3>
+                    <div class="theme-options">
+                        <div class="theme-option" data-theme="gold">
+                            <span class="color-preview gold"></span>
+                            <span>Gold</span>
+                        </div>
+                        <div class="theme-option" data-theme="blue">
+                            <span class="color-preview blue"></span>
+                            <span>Blue</span>
+                        </div>
+                        <div class="theme-option" data-theme="green">
+                            <span class="color-preview green"></span>
+                            <span>Green</span>
+                        </div>
+                        <div class="theme-option" data-theme="purple">
+                            <span class="color-preview purple"></span>
+                            <span>Purple</span>
+                        </div>
+                        <div class="theme-option" data-theme="orange">
+                            <span class="color-preview orange"></span>
+                            <span>Orange</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <main>
+                <ul id="resultsList" class="results-list"></ul>
+            </main>
+            
+            <aside id="specialMenu" class="special-menu">
+                <h2>Special Entries</h2>
+                <ul id="specialList" class="special-list"></ul>
+            </aside>
+        </div>
+    </div>
+    
+    <div id="editEntryForm" class="edit-entry-form">
+        <h3>Edit Entry</h3>
+        <input type="text" id="editNumber" placeholder="Number (required)" required>
+        <input type="text" id="editUrl" placeholder="Link URL (required)" required>
+        <input type="text" id="editSpecial" placeholder="Special text (optional)">
+        <button id="updateEntryBtn">Update</button>
+        <button id="cancelEditEntryBtn">Cancel</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
